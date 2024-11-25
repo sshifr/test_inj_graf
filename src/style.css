@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+img {
+    max-width: 600px;
+    height: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Общие стили для всех страниц */
+.page {
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Стиль для тестовой страницы */
+.test-page {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 80vh;
+}
+
+.navigation {
+    width: 30%;
+    min-width: 200px;
+    background-color: #f4f4f4;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.navigation h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.question-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+}
+
+.question-board button {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.question-board button.answered {
+    background-color: #8fbc8f;
+}
+
+.question-board button:hover {
+    background-color: #ccc;
+}
+
+.questions-container {
+    width: 70%;
+    padding: 40px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.questions-container h2 {
+    margin-bottom: 20px;
+}
+
+#answers label {
+    display: block;
+    text-align: left;
+    margin: 10px 0;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #f0f0f0;
+}

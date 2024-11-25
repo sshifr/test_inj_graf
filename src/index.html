@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестирование</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Страница начала теста -->
+    <div class="page start-page">
+        <h1>Добро пожаловать в тест</h1>
+        <p>Этот тест поможет проверить ваши знания.</p>
+        <button id="start-btn">Начать</button>
+    </div>
+    
+    <!-- Страница теста -->
+    <div class="page test-page hidden">
+        <div class="navigation">
+            <h3>Вопросы</h3>
+            <div class="question-board" id="question-board"></div>
+        </div>
+    
+        <div class="questions-container" id="questions-container">
+            <h2 id="question-number">Вопрос 1</h2>
+            <div id="question" class="question">
+                <h2 id="question-text">Вопрос</h2>
+                <img id="question-image" src="" alt="Иллюстрация к вопросу">
+                <div id="answers"></div>
+            </div>
+            <div class="buttons">
+                <button id="back-btn" class="hidden">Назад</button>
+                <button id="next-btn">Далее</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Страница результатов -->
+    <div class="page results-page hidden">
+        <h2>Результаты теста</h2>
+        <p id="results-text"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
