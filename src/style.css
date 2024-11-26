@@ -4,7 +4,7 @@ body {
     user-select: none;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Вертикальное выравнивание вверх */
     height: 100vh;
     background-color: #f9f9f9;
     overflow: hidden;
@@ -33,9 +33,8 @@ img {
 
 /* Стиль для тестовой страницы */
 .test-page {
-    display: flex;
     width: 90%;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: auto;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -45,24 +44,25 @@ img {
 }
 
 .navigation {
-    width: 30%;
-    min-width: 200px;
+    width: 100%;
     background-color: #f4f4f4;
-    border-right: 1px solid #ddd;
     padding: 20px;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center; /* Центрируем по горизонтали */
+    border-bottom: 1px solid #ddd; /* Добавляем разделительную линию */
 }
 
 .navigation h3 {
     text-align: center;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .question-board {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex; /* Горизонтальное выравнивание */
     gap: 10px;
-    justify-items: center;
+    justify-content: center;
 }
 
 .question-board button {
@@ -76,7 +76,7 @@ img {
 }
 
 .question-board button.answered {
-    background-color: #8fbc8f;
+    background-color: #8f8f8f;
 }
 
 .question-board button:hover {
@@ -84,7 +84,7 @@ img {
 }
 
 .questions-container {
-    width: 70%;
+    width: 100%; /* Для заполнения всей ширины */
     padding: 40px;
     box-sizing: border-box;
     text-align: center;
@@ -114,4 +114,12 @@ img {
 
 .buttons button:hover {
     background-color: #f0f0f0;
+}
+
+
+/*активная панель навигации*/
+.navigation .active {
+    background-color: #e7dc7a; /* Example color */
+    color: white; /* Make the text white when active */
+    border: 2px solid #e2cb4b; /* Optional: highlight the border */
 }

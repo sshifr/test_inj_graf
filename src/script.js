@@ -76,7 +76,7 @@ const questions = [
   },
   {
     text: "На рисунке изображены четыре плоскости каждая пересекается прямой l и построены точки пересечения. На каких рисунках при решении задачи применена горизонтально проецирующая плоскость.",
-    image: "imd/zd11.png",
+    image: "img/zd11.png",
     answers: [
       "а.",
       "б.",
@@ -232,14 +232,16 @@ const questions = [
 // Массив для ответов пользователя
 const userAnswers = questions.map(() => []);
 
-// Функция для переключения между страницами
+// Функция для переключения видимой страницы
 function showSection(section) {
-  startPage.classList.add("hidden");
-  testPage.classList.add("hidden");
-  resultsPage.classList.add("hidden");
-
-  section.classList.remove("hidden");
-}
+    // Скрыть все страницы
+    startPage.classList.add("hidden");
+    testPage.classList.add("hidden");
+    resultsPage.classList.add("hidden");
+  
+    // Показать нужную страницу
+    section.classList.remove("hidden");
+  }
 
 // Инициализация доски вопросов (кнопки для каждого вопроса)
 function initQuestionBoard() {
@@ -254,7 +256,17 @@ function initQuestionBoard() {
     button.classList.toggle("answered", userAnswers[index].length > 0);
     questionBoard.appendChild(button);
   });
+
+  const buttons = questionBoard.querySelectorAll("button");
+  buttons.forEach((btn, idx) => {
+    if (idx === currentQuestionIndex) {
+      btn.classList.add("active");
+    } else {
+      btn.classList.remove("active");
+    }
+  });
 }
+
 
 // Загрузка вопроса
 function loadQuestion(index) {
@@ -288,7 +300,17 @@ function loadQuestion(index) {
 
   backBtn.classList.toggle("hidden", index === 0);
   nextBtn.textContent = index === questions.length - 1 ? "Сохранить" : "Далее";
+
+ 
+  const buttons = questionBoard.querySelectorAll("button");
+  buttons.forEach((btn, idx) => {
+    btn.classList.remove("active");  
+    if (idx === index) {
+      btn.classList.add("active");  
+    }
+  });
 }
+
 
 // Обработка кнопки "Начать"
 startBtn.addEventListener("click", () => {
